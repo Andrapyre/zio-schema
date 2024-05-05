@@ -9,22 +9,22 @@ import scalanativecrossproject.NativePlatform
 
 object BuildHelper {
 
-  private val versions: Map[String, String] = {
-    import org.snakeyaml.engine.v2.api.{ Load, LoadSettings }
+//  private val versions: Map[String, String] = {
+//    import org.snakeyaml.engine.v2.api.{ Load, LoadSettings }
+//
+//    import java.util.{ List => JList, Map => JMap }
+//    import scala.jdk.CollectionConverters._
+//
+//    val doc = new Load(LoadSettings.builder().build())
+//      .loadFromReader(scala.io.Source.fromFile(".github/workflows/ci.yml").bufferedReader())
+//    val yaml = doc.asInstanceOf[JMap[String, JMap[String, JMap[String, JMap[String, JMap[String, JList[String]]]]]]]
+//    val list = yaml.get("jobs").get("build").get("strategy").get("matrix").get("scala").asScala
+//    list.map(v => (v.split('.').take(2).mkString("."), v)).toMap
+//  }
 
-    import java.util.{ List => JList, Map => JMap }
-    import scala.jdk.CollectionConverters._
-
-    val doc = new Load(LoadSettings.builder().build())
-      .loadFromReader(scala.io.Source.fromFile(".github/workflows/ci.yml").bufferedReader())
-    val yaml = doc.asInstanceOf[JMap[String, JMap[String, JMap[String, JMap[String, JMap[String, JList[String]]]]]]]
-    val list = yaml.get("jobs").get("build").get("strategy").get("matrix").get("scala").asScala
-    list.map(v => (v.split('.').take(2).mkString("."), v)).toMap
-  }
-
-  val Scala212: String = versions("2.12")
-  val Scala213: String = versions("2.13")
-  val Scala3: String   = versions("3.3")
+  val Scala212: String = "2.12.18"
+  val Scala213: String = "2.13.12"
+  val Scala3: String   = "3.3.1"
 
   val zioVersion                   = "2.0.19"
   val zioJsonVersion               = "0.6.2"
