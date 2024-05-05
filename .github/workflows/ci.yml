@@ -8,7 +8,7 @@ env:
 on:
   pull_request:
   push:
-    branches: ['main']
+    branches: ['currency-trial']
   release:
     types:
       - published
@@ -37,9 +37,12 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        java: ['adopt@1.8', 'adopt@1.11']
-        scala: ['2.12.18', '2.13.12', '3.3.1']
-        platform: ['JVM', 'Native', 'JS']
+#        java: ['adopt@1.8', 'adopt@1.11']
+#        scala: ['2.12.18', '2.13.12', '3.3.1']
+#        platform: ['JVM', 'Native', 'JS']
+        java: [ 'adopt@1.8' ]
+        scala: [ '2.12.18' ]
+        platform: [ 'Native', 'JS' ]
     steps:
     - uses: actions/checkout@v3.0.0
       with:
