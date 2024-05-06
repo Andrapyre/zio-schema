@@ -42,7 +42,7 @@ jobs:
 #        platform: ['JVM', 'Native', 'JS']
         java: [ 'adopt@1.8' ]
         scala: [ '2.12.18' ]
-        platform: [ 'Native', 'JS' ]
+        platform: [ 'JVM', 'Native', 'JS' ]
     steps:
     - uses: actions/checkout@v3.0.0
       with:
