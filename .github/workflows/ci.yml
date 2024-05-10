@@ -40,16 +40,16 @@ jobs:
 #        java: ['adopt@1.8', 'adopt@1.11']
 #        scala: ['2.12.18', '2.13.12', '3.3.1']
 #        platform: ['JVM', 'Native', 'JS']
-        java: [ 'adopt@1.8' ]
+        java: [ 'adopt:1.8' ]
         scala: [ '2.12.18' ]
-        platform: [ 'JVM', 'Native', 'JS' ]
+        platform: [ 'JVM' ]
     steps:
     - uses: actions/checkout@v3.0.0
       with:
         fetch-depth: 0
-    - uses: olafurpg/setup-scala@v13
+    - uses: coursier/setup-action@v1
       with:
-        java-version: ${{ matrix.java }}
+        jvm: ${{ matrix.java }}
     - name: Cache scala dependencies
       uses: coursier/cache-action@v6
     - name: Install libuv
