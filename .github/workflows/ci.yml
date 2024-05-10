@@ -56,7 +56,7 @@ jobs:
       if: matrix.platform == 'Native'
       run: sudo apt-get update && sudo apt-get install -y libuv1-dev
     - name: Run tests
-      run: sbt ++${{ matrix.scala }}! tests${{ matrix.platform }} / test
+      run: sbt ++${{ matrix.scala }}! 'tests${{ matrix.platform }} / test'
 
   publish:
     runs-on: ubuntu-20.04
